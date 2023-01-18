@@ -1,0 +1,28 @@
+
+Golang = Compiled programming language
+	Ease old programming of an interpreted, dynamically typed language such as python 
+	+ 
+	Efficiency and safety of statically typed , compiled language such as c++
+
+
+#String declaration
+var s string = "toto"
+
+#Integer declaration
+var number int = 100
+
+#Boolean declaration
+var myBoolean bool = true
+
+#Float declaration
+var myFloat float64 = 10.33
+
+printf format specifiers
+%v: default format
+%d: for declaration integers
+%T: type of the value
+%c: caracters
+%s: plain string
+%c: quoted caracters/string
+%f: floating numbers
+%.2f: floating numbers up to 2 decimal places
