@@ -23,6 +23,65 @@ printf format specifiers
 %T: type of the value
 %c: caracters
 %s: plain string
-%c: quoted caracters/string
+%q: quoted caracters/string
 %f: floating numbers
 %.2f: floating numbers up to 2 decimal places
+
+#Declare 2 variables
+var s,t string = "toto", "tutu"
+
+#Short variable declaration
+s := "Hello" //now need of var or the data type. implicitly do it
+
+#zero values
+Default value given to value without initialisation
+bool => false
+float64 => 0.0
+int => 0
+string => ""
+pointers, functions, interfaces, maps => nil
+
+#User input
+var nom string
+fmt.Println("Met ton nom:")
+fmt.Scanf("%s", &nom)
+fmt.Println("Le nom saisi est:", nom)
+
+#Multiple input
+var a string
+var b int
+fmt.Print("Add a string and a number")
+count, err := fmt.Scanf("%s %d", &a, &b)
+fmt.Println("count:", count)
+fmt.Println("error:", err)
+fmt.Println("a:", a)
+fmt.Println("b:", b)
+
+
+#Use the %T format specifier to find the type of a variable. Here %v represents the variable's value
+var grades int = 42
+fmt.Printf("variable grades = %v is of type %T", grades, grades)
+
+
+#Type of a variable using TypeOf function from reflect package. We use %v twice
+fmt.Printf("Type: %v \n", reflect.TypeOf(1000))
+fmt.Printf("variable grades = %v is of type %v", grades, grades)
+
+#Type casting - convert types
+var i int = 12
+var float64 = float64(i)
+
+#"strconv" package
+Itoa(): integer to string
+	var s string = strconv.Itoa(i) //convert int to string
+	fmt.Printf("%q", s)
+	
+Atoa(): string to interger
+	var s string = "200"
+	i, err := strconv.Atoi(s)
+	fmt.printf("%v, @T \n", i, i)
+
+#Constants - type is optional
+const myConst string = "my string constant"
+const age = 16
+const name, age = "Toto", 15
